@@ -1,0 +1,14 @@
+@use "./base.scss";
+@use "./flex.css";
+@use "./layout.scss";
+@import "./font-size.scss";
+@import "./cpn.scss";
+
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  min-height: 663px;
+  @include setFontSize(16);
+}

@@ -1,0 +1,16 @@
+@mixin setFontSize($size, $important: false) {
+    font-size: $size + 0px if($important, !important, null);
+  
+    [fs-coefficient="2"] & {
+        font-size: $size + 2px;
+    }
+    [fs-coefficient="4"] & {
+        font-size: $size + 4px;
+    }
+    [fs-coefficient="6"] & {
+        font-size: $size + 6px;
+    }
+    [fs-coefficient="8"] & {
+        font-size: $size + 8px;
+    }
+  }

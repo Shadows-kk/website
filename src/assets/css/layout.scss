@@ -1,0 +1,15 @@
+@import "./font-size.scss";
+
+.container_layout {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  // background-color: #0a021a;
+}
+.container_layout .common_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+}
