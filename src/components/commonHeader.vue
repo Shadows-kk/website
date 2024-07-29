@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute z-1000 top-0 left-0 right-2 flex flex-justify-around flex-items-center color-white h-60px pr-36 pl-36 text-base bg-headbg"
+    class="absolute z-1000 top-0 left-0 right-2 flex flex-justify-around flex-items-center color-white h-80px pr-36 pl-36 text-base bg-headbg"
   >
     <div><img src="@/assets/img/logo.png" width="120" height="60" alt="" /></div>
     <div class="flex flex-justify-around flex-items-center">
@@ -19,9 +19,9 @@
         <div
           :class="currentLoginStatus == index ? 'currentloginActive' : 'defaultlogin'"
           class="flex flex-justify-around flex-items-center cursor-pointer pl-20px pr-20px"
-          @click="currentLoginStatus = index"
+          @click="signAction(index)"
         >
-          {{ item }}
+          {{ item.type }}
         </div>
       </template>
     </div>
@@ -34,15 +34,20 @@ const route = useRoute();
 const currentActive = ref(0);
 const currentLoginStatus = ref(1);
 const itemsArr = ["Home", "APIs&Pricing", "Blog"]; // 导航栏
-const loginArr = ["Sign In", "Sign Up"];
+const loginArr = [
+  { type: "Sign In", path: "SignIn" },
+  { type: "Sign Up", path: "SignUp" },
+];
 const pageClick = (index) => {
   currentActive.value = index;
   router.push(itemsArr[index]);
 };
+const signAction = (index) => {
+  currentLoginStatus.value = index;
+  router.push(loginArr[index].path);
+};
 const init = () => {
   const path = route.path.replace(/^\//, "");
-  console.log("🚀 ~ init ~ route.path:", route.path);
-  console.log("🚀 ~ init ~ path:", path);
   const index = itemsArr.indexOf(path);
   if (index > 0) {
     currentActive.value = index;

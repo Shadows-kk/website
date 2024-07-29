@@ -1,16 +1,6 @@
 <template>
   <div class="relative z-10 pb-17.5 lg:pb-22.5 xl:pb-27.5">
-    <div class="absolute bottom-0 left-0 w-full flex flex-col gap-3 -z-1 opacity-50">
-      <div class="w-full h-[1.24px] footer-bg-gradient"></div>
-      <div class="w-full h-[2.47px] footer-bg-gradient"></div>
-      <div class="w-full h-[3.71px] footer-bg-gradient"></div>
-      <div class="w-full h-[4.99px] footer-bg-gradient"></div>
-      <div class="w-full h-[6.19px] footer-bg-gradient"></div>
-      <div class="w-full h-[7.42px] footer-bg-gradient"></div>
-      <div class="w-full h-[8.66px] footer-bg-gradient"></div>
-      <div class="w-full h-[9.90px] footer-bg-gradient"></div>
-      <div class="w-full h-[13px] footer-bg-gradient"></div>
-    </div>
+    <lineBg></lineBg>
     <div class="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0 relative pt-17.5">
       <div class="w-full h-[1px] footer-divider-gradient absolute top-0 left-0"></div>
       <div class="flex flex-wrap justify-between">
@@ -215,20 +205,6 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-.footer-bg-gradient {
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(rgba(255, 255, 255, 0.1)),
-    to(rgba(255, 255, 255, 0))
-  );
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
 .footer-divider-gradient {
   background: -webkit-gradient(
     linear,
